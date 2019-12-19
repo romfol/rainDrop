@@ -43268,12 +43268,23 @@ function () {
     this.sprite.width = size;
     this.sprite.x = x;
     this.sprite.y = y;
+    this.gravity = 0.5;
+    this.x = x;
+    this.y = y;
+    this.vx = 0; //speed
+
+    this.vy = 0; //speed
   }
 
   _createClass(Particle, [{
     key: "update",
     value: function update() {
       console.log("updated");
+      this.vy += this.gravity;
+      this.x += this.vx;
+      this.y += this.vy;
+      this.sprite.x = this.x;
+      this.sprite.y = this.y;
     }
   }]);
 
@@ -43321,7 +43332,7 @@ function () {
     this.container = new PIXI.ParticleContainer(1000);
     this.app.stage.addChild(this.container);
     this.number = 50;
-    this.particleSize = 50;
+    this.particleSize = 20;
     this.drops = [];
     this.addObjects();
   }
@@ -43333,7 +43344,7 @@ function () {
 
       loader.add('drop', _texture.default).load(function (loader, resources) {
         console.log(resources.drop.texture);
-        var particle = new _Particle.Particle(100, 100, resources.drop.texture, _this.particleSize);
+        var particle = new _Particle.Particle(111, 111, resources.drop.texture, _this.particleSize);
 
         _this.drops.push(particle);
 

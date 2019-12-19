@@ -22,7 +22,7 @@ class Sketch {
 
         this.number = 50;
 
-        this.particleSize = 50;
+        this.particleSize = 20;
 
         this.drops = [];
 
@@ -35,7 +35,7 @@ class Sketch {
         loader.add('drop', bla).load((loader, resources) => {
             console.log(resources.drop.texture);
 
-            let particle = new Particle(100, 100, resources.drop.texture, this.particleSize);
+            let particle = new Particle(111, 111, resources.drop.texture, this.particleSize);
             this.drops.push(particle)
 
             this.container.addChild(particle.sprite);
