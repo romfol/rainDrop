@@ -35,7 +35,7 @@ class Sketch {
         loader.add('drop', bla).load((loader, resources) => {
             console.log(resources.drop.texture);
 
-            let particle = new Particle(111, 111, resources.drop.texture, this.particleSize);
+            let particle = new Particle(10, 5, resources.drop.texture, this.particleSize);
             this.drops.push(particle)
 
             this.container.addChild(particle.sprite);
@@ -47,10 +47,8 @@ class Sketch {
     animate() {
         // Listen for animate update
         this.app.ticker.add((delta) => {
-        this.drops.forEach((d) => {
-            d.update();
-        })
-});
+            this.drops.forEach((d) => d.update())
+        });
     }
 
 }

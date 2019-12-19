@@ -43264,16 +43264,17 @@ function () {
     _classCallCheck(this, Particle);
 
     this.sprite = new PIXI.Sprite(texture);
-    this.sprite.height = size;
-    this.sprite.width = size;
+    this.size = size;
+    this.sprite.height = this.size;
+    this.sprite.width = this.size;
     this.sprite.x = x;
     this.sprite.y = y;
     this.gravity = 0.5;
     this.x = x;
     this.y = y;
-    this.vx = 0; //speed
-
-    this.vy = 0; //speed
+    this.vx = 0;
+    this.vy = 0;
+    this.bottom = window.innerHeight;
   }
 
   _createClass(Particle, [{
@@ -43283,6 +43284,15 @@ function () {
       this.vy += this.gravity;
       this.x += this.vx;
       this.y += this.vy;
+      console.log(this.x, this.y);
+
+      if (this.y + this.size > this.bottom) {
+        this.vy = 0;
+        this.vx = 0;
+        this.gravity = 0;
+        console.log("bottom");
+      }
+
       this.sprite.x = this.x;
       this.sprite.y = this.y;
     }
@@ -43344,7 +43354,7 @@ function () {
 
       loader.add('drop', _texture.default).load(function (loader, resources) {
         console.log(resources.drop.texture);
-        var particle = new _Particle.Particle(111, 111, resources.drop.texture, _this.particleSize);
+        var particle = new _Particle.Particle(10, 5, resources.drop.texture, _this.particleSize);
 
         _this.drops.push(particle);
 
@@ -43360,7 +43370,7 @@ function () {
       // Listen for animate update
       this.app.ticker.add(function (delta) {
         _this2.drops.forEach(function (d) {
-          d.update();
+          return d.update();
         });
       });
     }
@@ -43398,7 +43408,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34979" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45227" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
