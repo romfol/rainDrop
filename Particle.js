@@ -13,11 +13,15 @@ export class Particle {
 
         this.gravity = 0.5;
 
+        this.mode = 0;
+
         this.x = x;
         this.y = y;
 
         this.vx = 0;
         this.vy = 0;
+
+        this.vxb = 0.5;
 
         this.bounce = -0.5;
 
@@ -34,7 +38,14 @@ export class Particle {
         this.y += this.vy;
         console.log(this.x, this.y)
 
+        if(this.mode) {
+            this.x += this.vxb;
+
+        }
+
         if(this.y + this.size > this.bottom) {
+            this.mode = 1;
+
             this.y = this.bottom - this.size;
             this.vy *=this.bounce;
 
