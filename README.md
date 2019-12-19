@@ -1,0 +1,1 @@
+to start run `parcel index.html`
