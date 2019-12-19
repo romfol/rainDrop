@@ -19,6 +19,8 @@ export class Particle {
         this.vx = 0;
         this.vy = 0;
 
+        this.bounce = -0.5;
+
         this.bottom = window.innerHeight;
 
     }
@@ -33,9 +35,9 @@ export class Particle {
         console.log(this.x, this.y)
 
         if(this.y + this.size > this.bottom) {
-            this.vy = 0;
-            this.vx = 0;
-            this.gravity = 0;
+            this.y = this.bottom - this.size;
+            this.vy *=this.bounce;
+
             console.log("bottom");
         }
 

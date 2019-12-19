@@ -43274,6 +43274,7 @@ function () {
     this.y = y;
     this.vx = 0;
     this.vy = 0;
+    this.bounce = -0.5;
     this.bottom = window.innerHeight;
   }
 
@@ -43287,9 +43288,8 @@ function () {
       console.log(this.x, this.y);
 
       if (this.y + this.size > this.bottom) {
-        this.vy = 0;
-        this.vx = 0;
-        this.gravity = 0;
+        this.y = this.bottom - this.size;
+        this.vy *= this.bounce;
         console.log("bottom");
       }
 
@@ -43408,7 +43408,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45227" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33983" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
