@@ -31,15 +31,14 @@ class Sketch {
     }
 
     addObjects() {
-
+      for(let i = 0; i <= this.number; i++) {
         loader.add('drop', bla).load((loader, resources) => {
-            console.log(resources.drop.texture);
+          let particle = new Particle(10, 5, resources.drop.texture, this.particleSize);
+          this.drops.push(particle)
 
-            let particle = new Particle(10, 5, resources.drop.texture, this.particleSize);
-            this.drops.push(particle)
-
-            this.container.addChild(particle.sprite);
-        })
+          this.container.addChild(particle.sprite);
+          })
+      }
 
         this.animate();
     }

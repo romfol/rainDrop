@@ -2042,7 +2042,7 @@ earcut.flatten = function (data) {
     return result;
 };
 
-},{}],"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/node_modules/node-libs-browser/node_modules/punycode/punycode.js":[function(require,module,exports) {
+},{}],"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/node-libs-browser/node_modules/punycode/punycode.js":[function(require,module,exports) {
 var global = arguments[3];
 var define;
 /*! https://mths.be/punycode v1.4.1 by @mathias */
@@ -2579,7 +2579,7 @@ var define;
 
 }(this));
 
-},{}],"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/node_modules/url/util.js":[function(require,module,exports) {
+},{}],"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/url/util.js":[function(require,module,exports) {
 'use strict';
 
 module.exports = {
@@ -2597,7 +2597,7 @@ module.exports = {
   }
 };
 
-},{}],"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/node_modules/querystring-es3/decode.js":[function(require,module,exports) {
+},{}],"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/querystring-es3/decode.js":[function(require,module,exports) {
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -2683,7 +2683,7 @@ module.exports = function (qs, sep, eq, options) {
 var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
-},{}],"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/node_modules/querystring-es3/encode.js":[function(require,module,exports) {
+},{}],"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/querystring-es3/encode.js":[function(require,module,exports) {
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -2772,12 +2772,12 @@ var objectKeys = Object.keys || function (obj) {
 
   return res;
 };
-},{}],"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/node_modules/querystring-es3/index.js":[function(require,module,exports) {
+},{}],"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/querystring-es3/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
-},{"./decode":"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/node_modules/querystring-es3/decode.js","./encode":"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/node_modules/querystring-es3/encode.js"}],"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/node_modules/url/url.js":[function(require,module,exports) {
+},{"./decode":"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/querystring-es3/decode.js","./encode":"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/querystring-es3/encode.js"}],"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/url/url.js":[function(require,module,exports) {
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -3511,7 +3511,7 @@ Url.prototype.parseHost = function() {
   if (host) this.hostname = host;
 };
 
-},{"punycode":"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/node_modules/node-libs-browser/node_modules/punycode/punycode.js","./util":"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/node_modules/url/util.js","querystring":"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/node_modules/querystring-es3/index.js"}],"node_modules/@pixi/constants/lib/constants.es.js":[function(require,module,exports) {
+},{"punycode":"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/node-libs-browser/node_modules/punycode/punycode.js","./util":"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/url/util.js","querystring":"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/querystring-es3/index.js"}],"node_modules/@pixi/constants/lib/constants.es.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4913,7 +4913,7 @@ function deprecation(version, message, ignoreDepth) {
  * console.log(PIXI.utils.hex2string(0xff00ff)); // returns: "#ff00ff"
  * @namespace PIXI.utils
  */
-},{"@pixi/settings":"node_modules/@pixi/settings/lib/settings.es.js","eventemitter3":"node_modules/eventemitter3/index.js","earcut":"node_modules/earcut/src/earcut.js","url":"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/node_modules/url/url.js","@pixi/constants":"node_modules/@pixi/constants/lib/constants.es.js"}],"node_modules/@pixi/math/lib/math.es.js":[function(require,module,exports) {
+},{"@pixi/settings":"node_modules/@pixi/settings/lib/settings.es.js","eventemitter3":"node_modules/eventemitter3/index.js","earcut":"node_modules/earcut/src/earcut.js","url":"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/url/url.js","@pixi/constants":"node_modules/@pixi/constants/lib/constants.es.js"}],"node_modules/@pixi/math/lib/math.es.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43275,7 +43275,7 @@ function () {
     this.y = y;
     this.vx = 0;
     this.vy = 0;
-    this.vxb = 0.5;
+    this.vxb = 1.5;
     this.bounce = -0.5;
     this.bottom = window.innerHeight;
   }
@@ -43283,7 +43283,7 @@ function () {
   _createClass(Particle, [{
     key: "update",
     value: function update() {
-      console.log("updated");
+      console.log('updated');
       this.vy += this.gravity;
       this.x += this.vx;
       this.y += this.vy;
@@ -43297,7 +43297,7 @@ function () {
         this.mode = 1;
         this.y = this.bottom - this.size;
         this.vy *= this.bounce;
-        console.log("bottom");
+        console.log('bottom');
       }
 
       this.sprite.x = this.x;
@@ -43359,14 +43359,16 @@ function () {
     value: function addObjects() {
       var _this = this;
 
-      loader.add('drop', _texture.default).load(function (loader, resources) {
-        console.log(resources.drop.texture);
-        var particle = new _Particle.Particle(10, 5, resources.drop.texture, _this.particleSize);
+      for (var i = 0; i <= this.number; i++) {
+        loader.add('drop', _texture.default).load(function (loader, resources) {
+          var particle = new _Particle.Particle(10, 5, resources.drop.texture, _this.particleSize);
 
-        _this.drops.push(particle);
+          _this.drops.push(particle);
 
-        _this.container.addChild(particle.sprite);
-      });
+          _this.container.addChild(particle.sprite);
+        });
+      }
+
       this.animate();
     }
   }, {
@@ -43387,7 +43389,7 @@ function () {
 }();
 
 var b = new Sketch();
-},{"pixi.js":"node_modules/pixi.js/lib/pixi.es.js","./texture.png":"texture.png","./Particle":"Particle.js"}],"../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"pixi.js":"node_modules/pixi.js/lib/pixi.es.js","./texture.png":"texture.png","./Particle":"Particle.js"}],"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -43415,7 +43417,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46493" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59997" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -43591,5 +43593,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../.nvm/versions/node/v12.6.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
+},{}]},{},["C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
 //# sourceMappingURL=/app.c328ef1a.js.map

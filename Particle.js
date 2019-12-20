@@ -1,58 +1,56 @@
-import * as PIXI from "pixi.js";
+import * as PIXI from 'pixi.js';
 
 export class Particle {
-    constructor(x, y, texture, size) {
-        this.sprite = new PIXI.Sprite(texture);
+  constructor(x, y, texture, size) {
+    this.sprite = new PIXI.Sprite(texture);
 
-        this.size = size;
+    this.size = size;
 
-        this.sprite.height = this.size;
-        this.sprite.width = this.size;
-        this.sprite.x = x;
-        this.sprite.y = y;
+    this.sprite.height = this.size;
+    this.sprite.width = this.size;
+    this.sprite.x = x;
+    this.sprite.y = y;
 
-        this.gravity = 0.5;
+    this.gravity = 0.5;
 
-        this.mode = 0;
+    this.mode = 0;
 
-        this.x = x;
-        this.y = y;
+    this.x = x;
+    this.y = y;
 
-        this.vx = 0;
-        this.vy = 0;
+    this.vx = 0;
+    this.vy = 0;
 
-        this.vxb = 0.5;
+    this.vxb = 1.5;
 
-        this.bounce = -0.5;
+    this.bounce = -0.5;
 
-        this.bottom = window.innerHeight;
+    this.bottom = window.innerHeight;
+  }
 
+  update() {
+    console.log('updated');
+
+    this.vy += this.gravity;
+
+    this.x += this.vx;
+    this.y += this.vy;
+    console.log(this.x, this.y);
+
+    if (this.mode) {
+      this.x += this.vxb;
     }
 
-    update() {
-        console.log("updated");
+    if (this.y + this.size > this.bottom) {
+      this.mode = 1;
 
-        this.vy += this.gravity;
+      this.y = this.bottom - this.size;
+      this.vy *= this.bounce;
 
-        this.x += this.vx;
-        this.y += this.vy;
-        console.log(this.x, this.y)
-
-        if(this.mode) {
-            this.x += this.vxb;
-
-        }
-
-        if(this.y + this.size > this.bottom) {
-            this.mode = 1;
-
-            this.y = this.bottom - this.size;
-            this.vy *=this.bounce;
-
-            console.log("bottom");
-        }
-
-        this.sprite.x =  this.x;
-        this.sprite.y =  this.y;
+      console.log('bottom');
     }
+
+    this.sprite.x = this.x;
+    this.sprite.y = this.y;
+  }
 }
