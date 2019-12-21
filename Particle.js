@@ -1,5 +1,7 @@
 import * as PIXI from 'pixi.js';
 
+const rand = (max, min) => min + (max - min) * Math.random();
+
 export class Particle {
   constructor(x, y, texture, size) {
     this.sprite = new PIXI.Sprite(texture);
@@ -21,7 +23,7 @@ export class Particle {
     this.vx = 0;
     this.vy = 0;
 
-    this.vxb = 1.5;
+    this.vxb = rand(-1, 1);
 
     this.bounce = -0.5;
 

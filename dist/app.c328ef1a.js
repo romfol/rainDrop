@@ -43257,6 +43257,10 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+var rand = function rand(max, min) {
+  return min + (max - min) * Math.random();
+};
+
 var Particle =
 /*#__PURE__*/
 function () {
@@ -43275,7 +43279,7 @@ function () {
     this.y = y;
     this.vx = 0;
     this.vy = 0;
-    this.vxb = 1.5;
+    this.vxb = rand(-1, 1);
     this.bounce = -0.5;
     this.bottom = window.innerHeight;
   }
@@ -43359,16 +43363,17 @@ function () {
     value: function addObjects() {
       var _this = this;
 
-      for (var i = 0; i <= this.number; i++) {
-        loader.add('drop', _texture.default).load(function (loader, resources) {
-          var particle = new _Particle.Particle(10, 5, resources.drop.texture, _this.particleSize);
+      loader.add('drop', _texture.default).load(function (loader, resources) {
+        for (var i = 0; i <= _this.number; i++) {
+          var x = 100 + Math.random() * 600;
+          var y = Math.random() * 100;
+          var particle = new _Particle.Particle(x, y, resources.drop.texture, _this.particleSize);
 
           _this.drops.push(particle);
 
           _this.container.addChild(particle.sprite);
-        });
-      }
-
+        }
+      });
       this.animate();
     }
   }, {
@@ -43417,7 +43422,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59997" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49977" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
