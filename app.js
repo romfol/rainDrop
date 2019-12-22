@@ -52,4 +52,4 @@ class Sketch {
   }
 }
 
-const b = new Sketch();
+const app = new Sketch();
