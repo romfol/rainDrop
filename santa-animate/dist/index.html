@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+        <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
+        <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+        <script src="/app.c328ef1a.js" defer=""></script>
+        <script>var soundID = "Thunder";
+
+function loadSound() {
+  createjs.Sound.registerSound("assets/ho-ho-ho.mp3", soundID);
+}
+
+function playSound() {
+  createjs.Sound.play(soundID);
+}</script>
+    </head>
+    <body onload="loadSound();">
+        <canvas onclick="playSound();" id="demoCanvas" width="230" height="300"></canvas>
+    </body>
+</html>
