@@ -1,6 +1,7 @@
 import { SnowFlake } from './snowflake';
 import { Santa } from './santa';
 import { Bottle } from './bottle';
+import { Glasses } from './glasses';
 import sound from './assets/ho-ho-ho.mp3'
 
 const random = (max, min = 0) => min + (max - min) * Math.random();
@@ -26,6 +27,7 @@ class Sketch {
   addObjects() {
     let santa = new Santa(0, 100);
     this.stage.addChild(santa.bitmap);
+    santa.bitmap.addEventListener("click", () => this.glassesGo.call(this));
 
     this.bottle = new Bottle(0, 130);
     this.stage.addChild(this.bottle.bitmap);
@@ -52,6 +54,17 @@ class Sketch {
 
     createjs.Ticker.setFPS(60);
     createjs.Ticker.addEventListener('tick', this.stage);
+  }
+
+  glassesGo() {
+    let glasses = new Glasses(83, -30);
+    this.stage.addChild(glasses.bitmap);
+
+    createjs.Tween.get(glasses.bitmap).to(
+      { alpha: 1, y: 125 },
+      2000
+    );
+
   }
 }
 

@@ -162,8 +162,16 @@ var Santa = function Santa(x, y) {
   this.bitmap.x = x;
   this.bitmap.y = y;
   this.bitmap.scaleX = 0.48;
-  this.bitmap.scaleY = 0.45;
-};
+  this.bitmap.scaleY = 0.45; // this.bitmap.addEventListener("click", this.animate);
+} // animate(event) {
+//     console.log(this)
+//     let that = this;
+//    createjs.Tween.get(that.bitmap, { loop: true }).to(
+//     { alpha: 0, y: 130 },
+//     2000
+//   );
+// }
+;
 
 exports.Santa = Santa;
 },{"./assets/santa.png":"assets/santa.png"}],"assets/bottle.png":[function(require,module,exports) {
@@ -195,7 +203,36 @@ var Bottle = function Bottle(x, y) {
 };
 
 exports.Bottle = Bottle;
-},{"./assets/bottle.png":"assets/bottle.png"}],"assets/ho-ho-ho.mp3":[function(require,module,exports) {
+},{"./assets/bottle.png":"assets/bottle.png"}],"assets/glasses.png":[function(require,module,exports) {
+module.exports = "/glasses.08179e0a.png";
+},{}],"glasses.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Glasses = void 0;
+
+var _glasses = _interopRequireDefault(require("./assets/glasses.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Glasses = function Glasses(x, y) {
+  _classCallCheck(this, Glasses);
+
+  this.image = new Image();
+  this.image.src = _glasses.default;
+  this.bitmap = new createjs.Bitmap(this.image);
+  this.bitmap.x = x;
+  this.bitmap.y = y;
+  this.bitmap.scaleX = 0.08;
+  this.bitmap.scaleY = 0.07;
+};
+
+exports.Glasses = Glasses;
+},{"./assets/glasses.png":"assets/glasses.png"}],"assets/ho-ho-ho.mp3":[function(require,module,exports) {
 module.exports = "/ho-ho-ho.8894c782.mp3";
 },{}],"app.js":[function(require,module,exports) {
 "use strict";
@@ -205,6 +242,8 @@ var _snowflake = require("./snowflake");
 var _santa = require("./santa");
 
 var _bottle = require("./bottle");
+
+var _glasses = require("./glasses");
 
 var _hoHoHo = _interopRequireDefault(require("./assets/ho-ho-ho.mp3"));
 
@@ -242,8 +281,13 @@ function () {
   _createClass(Sketch, [{
     key: "addObjects",
     value: function addObjects() {
+      var _this = this;
+
       var santa = new _santa.Santa(0, 100);
       this.stage.addChild(santa.bitmap);
+      santa.bitmap.addEventListener("click", function () {
+        return _this.glassesGo.call(_this);
+      });
       this.bottle = new _bottle.Bottle(0, 130);
       this.stage.addChild(this.bottle.bitmap);
 
@@ -278,13 +322,23 @@ function () {
       createjs.Ticker.setFPS(60);
       createjs.Ticker.addEventListener('tick', this.stage);
     }
+  }, {
+    key: "glassesGo",
+    value: function glassesGo() {
+      var glasses = new _glasses.Glasses(83, -30);
+      this.stage.addChild(glasses.bitmap);
+      createjs.Tween.get(glasses.bitmap).to({
+        alpha: 1,
+        y: 125
+      }, 2000);
+    }
   }]);
 
   return Sketch;
 }();
 
 var app = new Sketch();
-},{"./snowflake":"snowflake.js","./santa":"santa.js","./bottle":"bottle.js","./assets/ho-ho-ho.mp3":"assets/ho-ho-ho.mp3"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./snowflake":"snowflake.js","./santa":"santa.js","./bottle":"bottle.js","./glasses":"glasses.js","./assets/ho-ho-ho.mp3":"assets/ho-ho-ho.mp3"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -312,7 +366,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36145" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33845" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

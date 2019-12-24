@@ -10,7 +10,20 @@ export class Santa {
         this.bitmap.y = y;
         this.bitmap.scaleX = 0.48;
         this.bitmap.scaleY = 0.45;
+
+        // this.bitmap.addEventListener("click", this.animate);
+
     }
+
+
+    // animate(event) {
+    //     console.log(this)
+    //     let that = this;
+    //    createjs.Tween.get(that.bitmap, { loop: true }).to(
+    //     { alpha: 0, y: 130 },
+    //     2000
+    //   );
+    // }
 }
 
 
