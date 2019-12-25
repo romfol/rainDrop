@@ -260,7 +260,7 @@ var random = function random(max) {
   return min + (max - min) * Math.random();
 };
 
-createjs.Sound.alternateExtensions = ["mp3"];
+createjs.Sound.alternateExtensions = ['mp3'];
 setTimeout(function () {
   console.log(playSound);
   playSound();
@@ -274,7 +274,7 @@ function () {
 
     this.stage = new createjs.Stage('demoCanvas');
     this.snowflakes = [];
-    this.soundID = "HO-HO-HO";
+    this.soundID = 'HO-HO-HO';
     this.addObjects();
   }
 
@@ -285,8 +285,8 @@ function () {
 
       var santa = new _santa.Santa(0, 100);
       this.stage.addChild(santa.bitmap);
-      santa.bitmap.addEventListener("click", function () {
-        return _this.glassesGo.call(_this);
+      santa.bitmap.addEventListener('click', function () {
+        return _this.glassesGo();
       });
       this.bottle = new _bottle.Bottle(0, 130);
       this.stage.addChild(this.bottle.bitmap);
@@ -338,7 +338,7 @@ function () {
 }();
 
 var app = new Sketch();
-},{"./snowflake":"snowflake.js","./santa":"santa.js","./bottle":"bottle.js","./glasses":"glasses.js","./assets/ho-ho-ho.mp3":"assets/ho-ho-ho.mp3"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./snowflake":"snowflake.js","./santa":"santa.js","./bottle":"bottle.js","./glasses":"glasses.js","./assets/ho-ho-ho.mp3":"assets/ho-ho-ho.mp3"}],"C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -366,7 +366,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33845" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51632" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -542,5 +542,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel/src/builtins/hmr-runtime.js","app.js"], null)
+},{}]},{},["C:/Users/Admin/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
 //# sourceMappingURL=/app.c328ef1a.js.map
